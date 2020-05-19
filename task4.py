@@ -20,10 +20,10 @@ def my_func2(x, y):
         return 'Не выполнено условие при вводе: y не может быть > или равен 0'
     else:
         result = 1
-        for i in range(-y):
+        for i in range(abs(y)):
             result *= 1 / x
         return round(result, 6)
 
 
-print(f'Рузультат возведения x в степень y: {my_func1(user_number1, user_number2)}')
-print(f'Рузультат возведения x в степень y: {my_func2(user_number1, user_number2)}')
+print(f'Результат возведения x в степень y: {my_func1(user_number1, user_number2)}')
+print(f'Результат возведения x в степень y: {my_func2(user_number1, user_number2)}')
