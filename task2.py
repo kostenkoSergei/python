@@ -35,10 +35,12 @@ class Coat(Clothes):
 
     @some_parameter.setter
     def some_parameter(self, some_parameter):
-        if isinstance(some_parameter, int) or isinstance(some_parameter, float):
-            self.__size = some_parameter
-        else:
+        if isinstance(some_parameter, str):
             print('Size parameter have to be a number')
+        elif some_parameter < 20 or some_parameter > 60:
+            print('We produce only sizes from 20 to 60')
+        elif (isinstance(some_parameter, int) or isinstance(some_parameter, float)) and (20 <= some_parameter <= 60):
+            self.__size = some_parameter
 
     @property
     def get_fabric_consumption(self):
@@ -74,7 +76,7 @@ class Suit(Clothes):
 
 
 try:
-    coat1 = Coat(50)
+    coat1 = Coat(45)
     # cause of using @ property decorator can use method as object handling usual point notation
     coat1_fabric = coat1.get_fabric_consumption
     suit1 = Suit(32)
