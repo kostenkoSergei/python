@@ -65,7 +65,7 @@ class Suit(Clothes):
         if isinstance(some_parameter, int) or isinstance(some_parameter, float):
             self.__height = some_parameter
         else:
-            print('Height parameter have to be a number')
+            print('Height parameter have to be a number (your height in meters) / 100)')
 
     @property
     def get_fabric_consumption(self):
