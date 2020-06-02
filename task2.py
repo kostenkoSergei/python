@@ -79,7 +79,7 @@ try:
     coat1 = Coat(45)
     # cause of using @ property decorator can use method as object handling usual point notation
     coat1_fabric = coat1.get_fabric_consumption
-    suit1 = Suit(32)
+    suit1 = Suit(1.85)
     # cause of using @ property decorator can use method as object handling usual point notation
     suit1_fabric = suit1.get_fabric_consumption
     print(coat1, suit1, sep='\n')
