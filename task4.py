@@ -113,12 +113,8 @@ try:
                    paper_size='A3/A4', manufacturer='Vietnam')
     xerox2 = Xerox(copies_per_minute=115, art='x051j028', mass=18, amount=4, paper_size='A3/A4')
     st = Storage()
-    st.to_get_in_storage(printer1)
-    st.to_get_in_storage(printer2)
-    st.to_get_in_storage(xerox2)
-    st.to_get_in_storage(xerox1)
-    st.to_get_in_storage(scanner1)
-    st.to_get_in_storage(scanner2)
+    for el in [printer1, printer2, scanner1, scanner2, xerox1, xerox2]:
+        st.to_get_in_storage(el)
     print(st)
     print()
     for el in st.full_content:
