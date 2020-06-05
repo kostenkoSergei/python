@@ -1,9 +1,14 @@
+"""This task includes task 5 and task 6 of homework also"""
+import traceback
+
 class Storage:
     def __init__(self):
+        """Create lists for storage content and content of separate departments"""
         self.printer_department, self.scanner_department, self.xerox_department = ([], [], [])
         self.full_content = []
 
     def to_get_in_storage(self, cont):
+        """Take some equipment. Return lists of equipment for departments and list of all equipment in storage"""
         if isinstance(cont, Printer):
             self.printer_department.append(cont)
         elif isinstance(cont, Scanner):
@@ -39,6 +44,7 @@ class OfficeEquipment:
 
     @amount.setter
     def amount(self, amount):
+        """Check if amount of equipment is a number"""
         if isinstance(amount, str):
             print('Amount of equipment has to be a number')
         elif isinstance(amount, int):
@@ -119,3 +125,5 @@ try:
         print(el())
 except AttributeError as a:
     print('Warning:\t', a)
+except TypeError as t:
+    print('Warning:', traceback.format_exc())

@@ -1,4 +1,4 @@
-class OwnError(ZeroDivisionError):
+class OwnError(Exception):
     def __init__(self, warning_text):
         """Creates an warning message if exception was happened"""
         self.txt = warning_text
@@ -16,12 +16,12 @@ class MyClass:
                 return self.user_list
                 break
             try:
-                if not user_input.isdigit():
-                    raise OwnError('You have to enter only integer numbers')
+                if not user_input.replace('-', '').replace('.', '').isdigit():
+                    raise OwnError('You have to enter only numbers')
             except OwnError as error:
                 print(error)
             else:
-                self.user_list.append(int(user_input))
+                self.user_list.append(float(user_input))
 
 
 some_obj = MyClass()

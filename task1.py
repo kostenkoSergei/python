@@ -1,9 +1,12 @@
+import datetime
+
+
 class Date:
     @classmethod
     def get_some_date(cls, some_string):
         cls.dd, cls.mm, cls.yy = tuple(map(int, some_string.split('-')))
         if cls.check_month_year(cls.dd, cls.mm, cls.yy):
-            return f'Your date is: {cls.dd} {cls.mm} {cls.yy}'
+            return f'Date is: {cls.dd} {cls.mm} {cls.yy}\n{datetime.datetime(cls.yy, cls.mm, cls.dd):%B %d, %Y, %A}'
         print('Try to enter a date one more time')
 
     @staticmethod
@@ -13,7 +16,7 @@ class Date:
                 day in range(1, 31) and month in [4, 6, 9, 11]) or (
                         day in range(28, 30) and month == 2)):
             return True
-        return print('You entered incorrect date')
+        return print('You entered an incorrect date')
 
 
 try:

@@ -20,7 +20,7 @@ try:
         raise OwnError('Division dy zero is prohibited. You have to go to math class again')
 except OwnError as error:
     print(error)
-except ValueError as v:
-    print('You entered not a number,', v, '\n', traceback.format_exc())
+except ValueError:
+    print('You entered not a number,', '\n', traceback.format_exc())
 else:
     print(f'Your result is {some_obj(some_obj.x, some_obj.y)}')
