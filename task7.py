@@ -15,16 +15,16 @@ Result of multiplication is {complex(obj1.number1, obj1.number2) * complex(obj2.
 {"+" if (self.number2 + other.number2) >= 0 else ""}{self.number2 + other.number2}j'
 
     def __mul__(self, other):
-        return f'Result of multiplication of two complex num is:  \
-{(self.number1 * other.number1 - self.number2 * other.number2)}{"+" if (self.number2 + other.number2) >= 0 else ""}\
-{(self.number1 * other.number2 + other.number1 * self.number2)}j '
+        part1 = self.number1 * other.number1 - self.number2 * other.number2
+        part2 = self.number1 * other.number2 + other.number1 * self.number2
+        return f'Result of multiplication of two complex num is: {part1}{"+" if part2 >= 0 else ""}{part2}j '
 
 
 try:
     print('Complex number is an expression of the form "a + bj\nYour first complex number:')
-    first_complex = ComplexNumbers(input('Enter first part, a = '), input('Enter seсond part, bj = '))
+    first_complex = ComplexNumbers(input('Enter first part, a = '), input('Enter second part, bj = '))
     print('Your second complex number:')
-    second_complex = ComplexNumbers(input('Enter first part, a = '), input('Enter seсond part, bj = '))
+    second_complex = ComplexNumbers(input('Enter first part, a = '), input('Enter second part, bj = '))
     print(first_complex + second_complex)
     print(first_complex * second_complex)
     print(ComplexNumbers.check(first_complex, second_complex))

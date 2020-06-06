@@ -1,6 +1,6 @@
 class OwnError(Exception):
     def __init__(self, warning_text):
-        """Creates an warning message if exception was happened"""
+        """Creates an warning message if exception happened"""
         self.txt = warning_text
 
 
